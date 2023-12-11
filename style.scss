@@ -11,3 +11,13 @@
   aspect-ratio: 1/1;
   object-fit: contain;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
