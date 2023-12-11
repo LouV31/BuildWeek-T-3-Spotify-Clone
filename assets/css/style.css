@@ -10763,4 +10763,8 @@ textarea.form-control-lg {
   position: absolute;
   top: 30px;
   right: 30px;
+}
+
+#containerAds {
+  max-height: 200px;
 }/*# sourceMappingURL=style.css.map */
