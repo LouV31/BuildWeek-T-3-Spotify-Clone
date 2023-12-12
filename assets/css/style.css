@@ -10780,6 +10780,10 @@ textarea.form-control-lg {
   width: 99wh;
 }
 
+.myCard {
+  background-color: #141414;
+}
+
 /* scrollbar main quadratino bianco */
 ::-webkit-scrollbar {
   width: 10px;
