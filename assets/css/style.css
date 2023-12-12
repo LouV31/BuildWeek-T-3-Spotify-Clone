@@ -10788,6 +10788,10 @@ textarea.form-control-lg {
   background-color: #4d4d4d;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 /* scrollbar main quadratino bianco */
 ::-webkit-scrollbar {
   width: 10px;
