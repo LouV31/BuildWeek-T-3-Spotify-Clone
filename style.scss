@@ -12,6 +12,11 @@
 	object-fit: contain;
 }
 
+.myContainer {
+	width: 99wh;
+}
+
+/* scrollbar main quadratino bianco */
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -21,7 +26,9 @@
 ::-webkit-scrollbar-track {
 	background-color: transparent;
 }
-
+::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
 /* #mainContent::-webkit-scrollbar {
 	width: 15px;
 } */
