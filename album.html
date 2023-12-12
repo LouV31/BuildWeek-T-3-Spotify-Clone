@@ -326,7 +326,7 @@
 							</div>
 							<hr class="mt-2 text-white-50" />
 							<ul class="list-unstyled" id="songList">
-								<li class="rounded-2">
+								<li class="rounded-2 songContainer">
 									<div class="row text-white-50 fs-5 mx-4">
 										<div class="col-7">
 											<div class="d-flex align-items-center">
@@ -350,7 +350,7 @@
 													width="22"
 													height="22"
 													fill="currentColor"
-													class="bi bi-heart"
+													class="bi bi-heart opacity-0 hoverOn"
 													viewBox="0 0 16 16"
 												>
 													<path
@@ -364,7 +364,7 @@
 														width="16"
 														height="16"
 														fill="currentColor"
-														class="bi bi-three-dots"
+														class="bi bi-three-dots opacity-0 hoverOn"
 														viewBox="0 0 16 16"
 													>
 														<path
@@ -521,5 +521,25 @@
 			integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			const listHover = function () {
+				const songContainer = document.querySelectorAll(".songContainer");
+				songContainer.forEach((song) => {
+					song.addEventListener("mouseover", function () {
+						const svg = this.querySelectorAll("svg");
+						svg.forEach((el) => {
+							el.classList.remove("opacity-0");
+						});
+					});
+					song.addEventListener("mouseout", function () {
+						const svg = this.querySelectorAll("svg");
+						svg.forEach((el) => {
+							el.classList.add("opacity-0");
+						});
+					});
+				});
+			};
+			listHover();
+		</script>
 	</body>
 </html>
