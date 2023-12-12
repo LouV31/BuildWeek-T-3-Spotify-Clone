@@ -7,8 +7,21 @@
 // 2. Include any default variable overrides here
 $dark: #121212;
 $success: #1ed760;
+
+$dropdown-link-hover-bg: #4d4d4d;
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "./assets/bootstrap/scss/variables";
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: 1rem,
+);
 //@import "./assets/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here

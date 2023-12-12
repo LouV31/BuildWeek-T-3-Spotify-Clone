@@ -1,23 +1,27 @@
 @import "./bootstrap-override";
 
 #badgeAds {
-  position: absolute;
-  top: 30px;
-  right: 30px;
+	position: absolute;
+	top: 30px;
+	right: 30px;
 }
 
 #imgAds {
-  max-height: 250px;
-  aspect-ratio: 1/1;
-  object-fit: contain;
+	max-height: 250px;
+	aspect-ratio: 1/1;
+	object-fit: contain;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #4d4d4d;
+	background-color: #4d4d4d;
 }
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+	background-color: transparent;
 }
+
+/* #mainContent::-webkit-scrollbar {
+	width: 15px;
+} */
