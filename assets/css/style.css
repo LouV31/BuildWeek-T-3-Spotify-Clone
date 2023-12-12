@@ -10801,10 +10801,9 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
-
+/* ::-webkit-scrollbar-corner {
+	background-color: transparent;
+} */
 /* #mainContent::-webkit-scrollbar {
 	width: 15px;
 } *//*# sourceMappingURL=style.css.map */
