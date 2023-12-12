@@ -10777,7 +10777,7 @@ textarea.form-control-lg {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: lightgray;
+  background-color: #4d4d4d;
 }
 
 ::-webkit-scrollbar-track {
