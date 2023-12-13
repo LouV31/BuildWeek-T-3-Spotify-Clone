@@ -33,13 +33,13 @@ const fetcher = (url) => {
 		},
 	})
 		.then((response) => {
-			console.log(response);
+			//console.log(response);
 
 			if (!response.ok) throw new Error("Errore");
 			return response.json();
 		})
 		.then((playlists) => {
-			console.log(playlists);
+			//console.log(playlists);
 			shuffleArray(playlists.data);
 			const playlistContainer = document.getElementById("playlistContainer");
 			playlists.data.forEach((playlist) => {
