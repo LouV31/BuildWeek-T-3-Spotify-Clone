@@ -81,6 +81,9 @@ const fetchAlbums = () => {
         colAlbum.addEventListener("mouseout", function () {
             buttonDiv.classList.remove("opacity-100");
         });
+        colAlbum.addEventListener("click", function () {
+            window.location.assign("./album.html?albumId=" + obj.id);
+        });
     }
 };
 fetchAlbums();
@@ -125,6 +128,9 @@ const fetchArtists = () => {
         artistContent.appendChild(artistName);
         artist.appendChild(artistContent);
         rowArtists.appendChild(artist);
+        artist.addEventListener("click", function () {
+            window.location.assign("./artist.html?artistId=" + myObj.id);
+        });
     }
 };
 fetchArtists();
@@ -202,6 +208,9 @@ function generatePlaylist(obj) {
     colAlbum.addEventListener("mouseout", function () {
         buttonDiv.classList.remove("opacity-100");
     });
+    colAlbum.addEventListener("click", function () {
+        window.location.assign("./playlist.html?playlistId=" + obj.id);
+    });
 }
 
 const fetchAds = function () {
@@ -223,7 +232,7 @@ const fetchAds = function () {
             generateAds(myObj);
         });
 };
-fetchAds();
+//fetchAds();
 
 function generateAds(obj) {
     const imgAds = document.getElementById("imgAds");
