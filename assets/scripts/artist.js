@@ -18,5 +18,18 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .then((myObj) => {
             console.log(myObj);
+            generateArtistPage(myObj);
+        })
+        .catch((err) => {
+            console.log("error", err);
         });
 });
+
+function generateArtistPage(myObj) {
+    const imgArtistDiv = document.getElementById("imgArtist");
+    imgArtistDiv.style.backgroundImage = myObj.picture_xl;
+    const artistName = document.getElementById("artistName");
+    artistName.innerText = myObj.name;
+    const monthlyFans = document.getElementById("monthlyFans");
+    monthlyFans.innerText = myObj.nb_fan + " ascoltatori mensili";
+}
