@@ -88,7 +88,7 @@
 								<button class="btn btn-secondary rounded-4 btn-sm">Artisti</button>
 							</div>
 							<!-- cambiare numerino magico calc(100vh - 247px)-->
-							<div class="text-white overflow-y-auto flex-grow-1 mh-100 ps-3" id="playlistContainer">
+							<div class="text-white overflow-y-auto flex-grow-1 mh-100 ps-3 pe-2 text-nowrap" id="playlistContainer">
 								<!-- playlist -->
 							</div>
 						</div>
@@ -291,80 +291,7 @@
 							<!-- contenuto buon qualcosa -->
 							<div id="bodyMain" class="">
 								<h3 id="dynamicGreet" class="text-white mb-3">Buonasera</h3>
-								<div class="row g-2 mb-4">
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-									<div class="col-4">
-										<div class="d-flex bg-secondary align-items-center text-white rounded-1 overflow-hidden">
-											<img
-												src="./assets/imgs/main/image-2.jpg"
-												alt=""
-												class="me-2"
-												height="70px"
-												style="object-fit: cover"
-											/>
-											<p class="m-0">Playlist</p>
-										</div>
-									</div>
-								</div>
+								<div class="row g-2 mb-4" id="rowArtists"></div>
 								<!-- altro di cio che ti piace -->
 								<div id="otherMain" class="mb-3">
 									<h3 class="text-white">Altro di ciò che ti piace</h3>
@@ -966,6 +893,7 @@
 		</script>
 		<!-- script amici -->
 		<script src="./assets/scripts/token.js"></script>
+		<script src="./assets/scripts/home.js"></script>
 		<script src="./assets/scripts/columns.js"></script>
 	</body>
 </html>

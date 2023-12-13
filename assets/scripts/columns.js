@@ -20,9 +20,12 @@ const options = {
 	},
 };
 
-const playlistParam = "type:playlist/";
+const artistParam = "nome&type=artist";
+
+const randomIndex = Math.floor(Math.random() * 200);
+const playlistParam = "type:playlist/&limit=100&index=" + randomIndex;
 const albumParam = 'type:"album"';
-const fetcher = () => {
+const fetcher = (url) => {
 	fetch(url, {
 		headers: {
 			"X-RapidAPI-Key": token,
@@ -37,25 +40,44 @@ const fetcher = () => {
 		})
 		.then((playlists) => {
 			console.log(playlists);
-			/* shuffleArray(playlists.data);
-			const playlistConteiner = document.getElementById("playlistContainer");
+			shuffleArray(playlists.data);
+			const playlistContainer = document.getElementById("playlistContainer");
 			playlists.data.forEach((playlist) => {
-				const div = document.createElement("div");
-				div.classList.add("p-2", "d-flex");
+				const divPlaylistColumn = document.createElement("divPlaylistColumn");
+				divPlaylistColumn.addEventListener("mouseover", function () {
+					divPlaylistColumn.classList.add("bg-secondary");
+				});
+				divPlaylistColumn.addEventListener("mouseout", function () {
+					divPlaylistColumn.classList.remove("bg-secondary");
+				});
+				divPlaylistColumn.classList.add(
+					"p-2",
+					"d-flex",
+					"align-items-center",
+					"rounded-2",
+					"mb-2",
+					"overflow-x-hidden"
+				);
 				const img = document.createElement("img");
+				img.className = "me-2 rounded-2";
 				img.src = playlist.album.cover_small;
-				const p = document.createElement("p");
-				p.innerText = playlist.title;
-				playlistConteiner.appendChild(div);
-				div.appendChild(img);
-				div.appendChild(p);
-				if (playlist.next) {
-					fetcher(playlist.next);
-				}
-			} )*/
+				const pPlaylistTitle = document.createElement("pPlaylistTitle");
+				pPlaylistTitle.className = "m-0 small ellipsis overflow-x-hidden";
+				pPlaylistTitle.innerText = playlist.title;
+				pPlaylistAuthor = document.createElement("p");
+				pPlaylistAuthor.innerText = playlist.album.title;
+				pPlaylistAuthor.className = "text-muted m-0 ellipsis overflow-x-hidden";
+				divPlaylistInfo = document.createElement("div");
+				divPlaylistInfo.className = "d-flex flex-column justify-content-between overflow-x-hidden";
+				divPlaylistInfo.appendChild(pPlaylistTitle);
+				divPlaylistInfo.appendChild(pPlaylistAuthor);
+				playlistContainer.appendChild(divPlaylistColumn);
+				divPlaylistColumn.appendChild(img);
+				divPlaylistColumn.appendChild(divPlaylistInfo);
+			});
 		})
 		.catch((error) => new Error(error));
 };
 
 //fetcher(url + playlistParam);
-fetcher();
+fetcher(url + playlistParam);

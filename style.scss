@@ -26,6 +26,12 @@
 .overflow-y-auto {
 	overflow-y: auto;
 }
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
+.ellipsis {
+	text-overflow: ellipsis;
+}
 .h-90 {
 	height: 90%;
 }
