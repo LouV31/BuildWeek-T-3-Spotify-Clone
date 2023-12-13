@@ -7,7 +7,11 @@ const btnCloseFriends = document.getElementById("btnCloseFriends");
 btnCloseFriends.addEventListener("click", closeFriends);
 btnAmici.addEventListener("click", closeFriends);
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=playlist/tracks";
+function shuffleArray(inputArray) {
+	inputArray.sort(() => Math.random() - 0.5);
+}
+
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 const options = {
 	method: "GET",
 	headers: {
@@ -16,10 +20,11 @@ const options = {
 	},
 };
 
+const playlistParam = "type:playlist/";
+const albumParam = 'type:"album"';
 const fetcher = () => {
 	fetch(url, {
 		headers: {
-			method: "GET",
 			"X-RapidAPI-Key": token,
 			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
 		},
@@ -30,10 +35,27 @@ const fetcher = () => {
 			if (!response.ok) throw new Error("Errore");
 			return response.json();
 		})
-		.then((playlist) => {
-			console.log(playlist);
+		.then((playlists) => {
+			console.log(playlists);
+			/* shuffleArray(playlists.data);
+			const playlistConteiner = document.getElementById("playlistContainer");
+			playlists.data.forEach((playlist) => {
+				const div = document.createElement("div");
+				div.classList.add("p-2", "d-flex");
+				const img = document.createElement("img");
+				img.src = playlist.album.cover_small;
+				const p = document.createElement("p");
+				p.innerText = playlist.title;
+				playlistConteiner.appendChild(div);
+				div.appendChild(img);
+				div.appendChild(p);
+				if (playlist.next) {
+					fetcher(playlist.next);
+				}
+			} )*/
 		})
 		.catch((error) => new Error(error));
 };
 
+//fetcher(url + playlistParam);
 fetcher();
