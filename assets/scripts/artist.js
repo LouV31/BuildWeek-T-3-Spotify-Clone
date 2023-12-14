@@ -33,6 +33,10 @@ function generateArtistPage(myObj) {
 	artistName.innerText = myObj.name;
 	const monthlyFans = document.getElementById("monthlyFans");
 	monthlyFans.innerText = myObj.nb_fan + " ascoltatori mensili";
+	const artistLikedImg = document.getElementById("artistLikedImg");
+	artistLikedImg.src = myObj.picture_medium;
+	const artistLikedName = document.getElementById("artistLikedName");
+	artistLikedName.innerText = "di " + myObj.name;
 
 	const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + myObj.name;
 	/* fetch 2 */
@@ -65,12 +69,12 @@ function generateArtistSongs(myObj) {
 
 	const singleSong = document.createElement("li");
 	singleSong.className =
-		"d-flex align-items-center justify-content-between  list-group-item bg-transparent border-0 text-white";
+		"d-flex align-items-center justify-content-between rounded-2 list-group-item bg-transparent border-0 text-white";
 	const songImg = document.createElement("img");
 	songImg.src = myObj.album.cover_small;
 	songImg.className = "rounded-3 ms-4";
 	const songInfo = document.createElement("div");
-	songInfo.classList = "text-white ms-3 me-auto";
+	songInfo.classList = "text-white ms-3 w-50 me-auto";
 	const songName = document.createElement("p");
 	songName.classList = "m-0";
 	songName.innerText = myObj.title;
@@ -88,12 +92,12 @@ function generateArtistSongs(myObj) {
 	singleSong.appendChild(songInfo);
 
 	const nStream = document.createElement("div");
-	nStream.className = "d-flex  justify-content-end flex-grow-1 me-5";
-	nStream.innerText = myObj.rank;
+	nStream.className = "d-flex justify-content-end me-5 w-25";
+	nStream.innerHTML = `<p class="m-0">${myObj.rank}</p>`;
 	singleSong.appendChild(nStream);
 
 	const divDuration = document.createElement("div");
-	divDuration.className = "d-flex justify-content-end ms-5";
+	divDuration.className = "d-flex justify-content-end";
 	divDuration.innerHTML = `<p class="m-0"><svg
 	xmlns="http://www.w3.org/2000/svg"
 	width="22"
@@ -106,7 +110,7 @@ function generateArtistSongs(myObj) {
 		d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
 	/>
 	</svg></p>
-	<p class="m-0">2:21</p>
+	<p class="m-0 mx-3">2:21</p>
 	<p class="m-0"><svg
 	xmlns="http://www.w3.org/2000/svg"
 	width="16"
@@ -120,4 +124,19 @@ function generateArtistSongs(myObj) {
 	/>
 	</svg></p>`;
 	singleSong.appendChild(divDuration);
+
+	singleSong.addEventListener("mouseover", function () {
+		singleSong.classList.remove("bg-transparent");
+		singleSong.classList.add("bg-secondary");
+		this.querySelectorAll("svg").forEach((el) => {
+			el.classList.add("opacity-100");
+		});
+	});
+	singleSong.addEventListener("mouseout", function () {
+		singleSong.classList.remove("bg-secondary");
+		singleSong.classList.add("bg-transparent");
+		this.querySelectorAll("svg").forEach((el) => {
+			el.classList.remove("opacity-100");
+		});
+	});
 }
