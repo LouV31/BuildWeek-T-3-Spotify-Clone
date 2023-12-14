@@ -1,4 +1,5 @@
 const urlArtist = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
+const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 const params = new URLSearchParams(window.location.search);
 const artistId = params.get("artistId");
 console.log(artistId);
@@ -32,4 +33,91 @@ function generateArtistPage(myObj) {
 	artistName.innerText = myObj.name;
 	const monthlyFans = document.getElementById("monthlyFans");
 	monthlyFans.innerText = myObj.nb_fan + " ascoltatori mensili";
+
+	const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + myObj.name;
+	/* fetch 2 */
+	fetch(urlSearch, {
+		headers: {
+			"X-RapidAPI-Key": token,
+			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+		},
+	})
+		.then((resp) => {
+			if (!resp.ok) {
+				statusErrors(resp);
+			}
+			return resp.json();
+		})
+		.then((myObj) => {
+			for (let i = 0; i < 5; i++) {
+				console.log(myObj);
+				console.log(urlSearch);
+				generateArtistSongs(myObj.data[i]);
+			}
+		})
+		.catch((err) => {
+			console.log("error", err);
+		});
+}
+
+function generateArtistSongs(myObj) {
+	const artistSong = document.getElementById("artistSong");
+
+	const singleSong = document.createElement("li");
+	singleSong.className =
+		"d-flex align-items-center justify-content-between  list-group-item bg-transparent border-0 text-white";
+	const songImg = document.createElement("img");
+	songImg.src = myObj.album.cover_small;
+	songImg.className = "rounded-3 ms-4";
+	const songInfo = document.createElement("div");
+	songInfo.classList = "text-white ms-3 me-auto";
+	const songName = document.createElement("p");
+	songName.classList = "m-0";
+	songName.innerText = myObj.title;
+	songInfo.appendChild(songName);
+	if (myObj.explicit_lyrics == true) {
+		const songE = document.createElement("p");
+		songE.classList = "m-0";
+		songE.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-explicit-fill" viewBox="0 0 16 16">
+	<path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zm4.326 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z"/>
+  </svg>`;
+		songInfo.appendChild(songE);
+	}
+	artistSong.appendChild(singleSong);
+	singleSong.appendChild(songImg);
+	singleSong.appendChild(songInfo);
+
+	const nStream = document.createElement("div");
+	nStream.className = "d-flex  justify-content-end flex-grow-1 me-5";
+	nStream.innerText = myObj.rank;
+	singleSong.appendChild(nStream);
+
+	const divDuration = document.createElement("div");
+	divDuration.className = "d-flex justify-content-end ms-5";
+	divDuration.innerHTML = `<p class="m-0"><svg
+	xmlns="http://www.w3.org/2000/svg"
+	width="22"
+	height="22"
+	fill="currentColor"
+	class="bi bi-heart opacity-0 hoverOn"
+	viewBox="0 0 16 16"
+	>
+	<path
+		d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+	/>
+	</svg></p>
+	<p class="m-0">2:21</p>
+	<p class="m-0"><svg
+	xmlns="http://www.w3.org/2000/svg"
+	width="16"
+	height="16"
+	fill="currentColor"
+	class="bi bi-three-dots opacity-0 hoverOn"
+	viewBox="0 0 16 16"
+	>
+	<path
+		d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+	/>
+	</svg></p>`;
+	singleSong.appendChild(divDuration);
 }
