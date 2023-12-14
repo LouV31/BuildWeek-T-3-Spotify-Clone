@@ -10829,7 +10829,7 @@ textarea.form-control-lg {
 
 #albumSongs li::before {
   width: 20px;
-  padding-inline: 5px;
+  padding-inline-end: 10px;
   vertical-align: center;
 }
 
