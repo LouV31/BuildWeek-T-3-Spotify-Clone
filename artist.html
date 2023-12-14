@@ -441,16 +441,17 @@
 			</div>
 		</div>
 		<div class="musicPlayer container-fluid fixed-bottom bg-black pt-2 h-10">
+			<audio class="d-none" src=""></audio>
 			<div class="row d-flex h-100">
 				<!-- div card sx -->
 				<div class="col bg-black h-100">
 					<div class="d-flex align-items-center h-100">
-						<img src="./assets/imgs/main/image-1.jpg" class="rounded-2 h-90" alt="..." />
+						<img src="" class="rounded-2 h-90" alt="..." />
 
-						<div class="ms-3 d-flex flex-column">
-							<h5 class="m-0">Song</h5>
+						<div class="ms-3 d-flex flex-column text-white">
+							<h5 class="m-0 fs-7"></h5>
 
-							<p class="m-0">Artist</p>
+							<p class="m-0 small"></p>
 						</div>
 					</div>
 				</div>
@@ -574,17 +575,15 @@
 					</button>
 
 					<div class="volume-bar ml-auto">
-						<div class="progress bg-secondary" style="height: 3px; width: 80px">
-							<div
-								class="progress-bar bg-white"
-								role="progressbar"
-								aria-label="Progress bar"
-								style="width: 40%"
-								aria-valuenow="25"
-								aria-valuemin="0"
-								aria-valuemax="100"
-							></div>
-						</div>
+						<input
+							type="range"
+							id="volumeControl"
+							class="form-range text-black"
+							min="0"
+							max="100"
+							value="50"
+							style="height: 3px; width: 80px; color: grey"
+						/>
 					</div>
 				</div>
 			</div>
