@@ -81,3 +81,8 @@ const fetcher = (url) => {
 
 //fetcher(url + playlistParam);
 fetcher(url + playlistParam);
+
+const prevButton = document.querySelector(".bi-caret-left");
+const nextButton = document.querySelector(".bi-caret-right");
+nextButton.addEventListener("click", history.forward);
+prevButton.addEventListener("click", history.back);
