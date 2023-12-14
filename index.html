@@ -1,626 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <title>Spotify Clone</title>
-    </head>
-    <body class="bg-black overflow-hidden">
-        <div class="container-fluid">
-            <div class="row bg-black g-2 py-2 vh-100">
-                <div class="col-3 d-flex flex-column h-90">
-                    <div class="d-flex flex-column p-4 bg-dark rounded-3">
-                        <a
-                            href="#"
-                            class="nav-link link-underline link-underline-opacity-0 text-white d-flex align-items-center mb-4"
-                            active
-                        >
-                            <button class="btn btn-dark ms-0 ps-0">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="22"
-                                    height="22"
-                                    fill="currentColor"
-                                    class="bi bi-house-door me-3"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"
-                                    />
-                                </svg>
-                                <span class="">Home</span>
-                            </button>
-                        </a>
-                        <a href="#" class="nav-link text-white d-flex align-items-center">
-                            <button class="btn btn-dark ms-0 ps-0">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="22"
-                                    height="22"
-                                    fill="currentColor"
-                                    class="bi bi-search me-3"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                                    />
-                                </svg>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<title>Spotify Clone</title>
+	</head>
+	<body class="bg-black overflow-hidden">
+		<div class="container-fluid">
+			<div class="row bg-black g-2 py-2 vh-100">
+				<div class="col-3 d-flex flex-column h-90">
+					<div class="d-flex flex-column p-4 bg-dark rounded-3">
+						<a
+							href="#"
+							class="nav-link link-underline link-underline-opacity-0 text-white d-flex align-items-center mb-4"
+							active
+						>
+							<button class="btn btn-dark ms-0 ps-0">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="22"
+									height="22"
+									fill="currentColor"
+									class="bi bi-house-door me-3"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"
+									/>
+								</svg>
+								<span class="">Home</span>
+							</button>
+						</a>
+						<a href="./search.html" class="nav-link text-white d-flex align-items-center">
+							<button class="btn btn-dark ms-0 ps-0">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="22"
+									height="22"
+									fill="currentColor"
+									class="bi bi-search me-3"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+									/>
+								</svg>
 
-                                <span>Cerca</span>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="flex-grow-1 overflow-hidden mt-2">
-                        <div class="d-flex flex-column bg-dark rounded-3 h-100 pb-2">
-                            <div class="mb-2 p-3">
-                                <a href="" class="nav-link text-white d-flex align-items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        fill="currentColor"
-                                        class="bi bi-collection-fill me-3"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
-                                        />
-                                    </svg>
-                                    <span>La tua libreria</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        fill="currentColor"
-                                        class="bi bi-plus ms-auto"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="mb-2 p-3">
-                                <button class="btn btn-secondary rounded-4 btn-sm">Playlist</button>
-                                <button class="btn btn-secondary rounded-4 btn-sm">Podcast</button>
-                                <button class="btn btn-secondary rounded-4 btn-sm">Artisti</button>
-                            </div>
-                            <!-- cambiare numerino magico calc(100vh - 247px)-->
-                            <div
-                                class="text-white overflow-y-auto flex-grow-1 mh-100 ps-3 pe-2 text-nowrap"
-                                id="playlistContainer"
-                            >
-                                <!-- playlist -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col flex-grow-1 h-100" id="mainContent">
-                    <div class="h-90 bg-dark rounded-3 pb-2">
-                        <div class="p-3 pt-0 overflow-y-auto h-100">
-                            <div class="d-flex justify-content-between sticky-top bg-dark py-3">
-                                <div class="d-flex">
-                                    <button class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-caret-left"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button class="btn btn-secondary rounded-circle d-flex align-items-center p-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-caret-right"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2 ms-auto"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-bell"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-people"
-                                            viewBox="0 0 16 16"
-                                            id="btnAmici"
-                                        >
-                                            <path
-                                                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button class="btn btn-secondary rounded-circle d-flex align-items-center p-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-person"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="containerAds" class="mt-3 mb-4">
-                                <div class="card mb-3 bg-black">
-                                    <div class="row g-0">
-                                        <div class="col-md-3 d-flex flex-column justify-content-center px-2 py-4">
-                                            <!-- dimensione card da risolvere -->
-                                            <img
-                                                src="./assets/imgs/main/image-1.jpg"
-                                                class="img-fluid rounded-2"
-                                                alt="..."
-                                                id="imgAds"
-                                            />
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="card-body text-white">
-                                                <p class="fw-bolder" id="albumAds"></p>
-                                                <h2 class="card-title display-2" id="titleAds"></h2>
-                                                <p class="card-text" id="artistAds"></p>
-                                                <p class="card-text">Ascolta il nuovo singolo</p>
-                                                <div>
-                                                    <button
-                                                        class="px-4 py-2 btn btn-success fw-semibold text-black btn-sm rounded-pill fs-7 me-2"
-                                                    >
-                                                        Play
-                                                    </button>
-                                                    <button
-                                                        class="px-4 py-2 btn btn-outline-dark fw-semibold btn-sm rounded-pill text-white border-white fs-7 me-2"
-                                                    >
-                                                        Salva
-                                                    </button>
-                                                    <div class="dropdown d-inline-block">
-                                                        <button
-                                                            class="px-2 py-2 btn btn-black fw-semibold fs-7 text-white-50"
-                                                            type="button"
-                                                            data-bs-toggle="dropdown"
-                                                        >
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="20"
-                                                                height="20"
-                                                                fill="currentColor"
-                                                                class="bi bi-three-dots"
-                                                                viewBox="0 0 16 16"
-                                                            >
-                                                                <path
-                                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
-                                                                />
-                                                            </svg>
-                                                        </button>
-                                                        <ul class="dropdown-menu bg-dark p-2">
-                                                            <li>
-                                                                <a
-                                                                    class="dropdown-item text-white rounded-1 mb-1 d-flex align-items-center"
-                                                                    href="#"
-                                                                    ><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        width="16"
-                                                                        height="16"
-                                                                        fill="currentColor"
-                                                                        class="bi bi-plus-circle me-2"
-                                                                        viewBox="0 0 16 16"
-                                                                    >
-                                                                        <path
-                                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                                                                        />
-                                                                        <path
-                                                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
-                                                                        />
-                                                                    </svg>
-                                                                    Aggiungi alla libreria
-                                                                </a>
-                                                            </li>
-                                                            <!-- AGGIUNGERE DROPEND -->
-                                                            <li class="">
-                                                                <a
-                                                                    class="dropdown-item text-white rounded-1 mb-1 d-flex align-items-center"
-                                                                    href="#"
-                                                                    ><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        width="16"
-                                                                        height="16"
-                                                                        fill="currentColor"
-                                                                        class="bi bi-box-arrow-up me-2"
-                                                                        viewBox="0 0 16 16"
-                                                                    >
-                                                                        <path
-                                                                            fill-rule="evenodd"
-                                                                            d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"
-                                                                        />
-                                                                        <path
-                                                                            fill-rule="evenodd"
-                                                                            d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"
-                                                                        />
-                                                                    </svg>
-                                                                    Condividi</a
-                                                                >
-                                                            </li>
-                                                            <li>
-                                                                <a
-                                                                    class="dropdown-item text-white rounded-1 d-flex align-items-center"
-                                                                    href="#"
-                                                                    ><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        width="16"
-                                                                        height="16"
-                                                                        fill="currentColor"
-                                                                        class="bi bi-exclamation-octagon me-2"
-                                                                        viewBox="0 0 16 16"
-                                                                    >
-                                                                        <path
-                                                                            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"
-                                                                        />
-                                                                        <path
-                                                                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
-                                                                        />
-                                                                    </svg>
-                                                                    Segnala
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span id="badgeAds" class="badge rounded-3 bg-secondary"> Sponsorizzato </span>
-                                </div>
-                            </div>
-                            <!-- contenuto buon qualcosa -->
-                            <div id="bodyMain" class="">
-                                <h3 id="dynamicGreet" class="text-white mb-3">Buonasera</h3>
-                                <div class="row g-2 mb-4" id="rowArtists"></div>
-                                <!-- altro di cio che ti piace -->
-                                <div id="otherMain" class="mb-3">
-                                    <h3 class="text-white">Altro di ciò che ti piace</h3>
-                                    <div class="row row-cols-2 row-cols-lg-5" id="albumsRow"></div>
-                                </div>
-                                <div id="forYou" class="mb-3">
-                                    <h3 class="text-white">Creato per te</h3>
-                                    <div class="row row-cols-2 row-cols-lg-5" id="playlistRow"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2" id="friends">
-                    <div class="bg-dark p-3 rounded-3 h-90 text-white">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="mb-0">Attivita' amici</h6>
-                            <div class="text-white-50">
-                                <button class="btn btn-dark p-1 text-white-50 rounded-circle">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        fill="currentColor"
-                                        class="bi bi-person-plus"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"
-                                        />
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                                        />
-                                    </svg>
-                                </button>
-                                <button class="btn btn-dark p-1 text-white-50 rounded-circle">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        fill="currentColor"
-                                        class="bi bi-x-lg"
-                                        id="btnCloseFriends"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <img
-                                src="./assets/imgs/main/image-15.jpg"
-                                alt=""
-                                class="rounded-circle me-2"
-                                height="40px"
-                                width="40px"
-                            />
-                            <div class="d-flex flex-column">
-                                <p class="mb-1">Charlie Hookham</p>
-                                <p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
-                                <p class="fs-7 text-white-50 d-flex align-items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-disc me-1"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                        <path
-                                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
-                                        />
-                                    </svg>
-                                    <span>EP III</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <img
-                                src="./assets/imgs/main/image-13.jpg"
-                                alt=""
-                                class="rounded-circle me-2"
-                                height="40px"
-                                width="40px"
-                            />
-                            <div class="d-flex flex-column">
-                                <p class="mb-1">lightdark02</p>
-                                <p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
-                                <p class="fs-7 text-white-50 d-flex align-items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-disc me-1"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                        <path
-                                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
-                                        />
-                                    </svg>
-                                    <span>EP III</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <img
-                                src="./assets/imgs/main/image-17.jpg"
-                                alt=""
-                                class="rounded-circle me-2"
-                                height="40px"
-                                width="40px"
-                            />
-                            <div class="d-flex flex-column">
-                                <p class="mb-1">Valeria Traverso</p>
-                                <p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
-                                <p class="fs-7 text-white-50 d-flex align-items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        class="bi bi-disc me-1"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                        <path
-                                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
-                                        />
-                                    </svg>
-                                    <span>EP III</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="musicPlayer container-fluid fixed-bottom bg-black pt-2 h-10">
-                    <div class="row d-flex h-100">
-                        <!-- div card sx -->
-                        <div class="col bg-black h-100">
-                            <div class="d-flex align-items-center h-100">
-                                <img src="./assets/imgs/main/image-1.jpg" class="rounded-2 h-90" alt="..." />
+								<span>Cerca</span>
+							</button>
+						</a>
+					</div>
+					<div class="flex-grow-1 overflow-hidden mt-2">
+						<div class="d-flex flex-column bg-dark rounded-3 h-100 pb-2">
+							<div class="mb-2 p-3">
+								<a href="" class="nav-link text-white d-flex align-items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="22"
+										height="22"
+										fill="currentColor"
+										class="bi bi-collection-fill me-3"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
+										/>
+									</svg>
+									<span>La tua libreria</span>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="22"
+										height="22"
+										fill="currentColor"
+										class="bi bi-plus ms-auto"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+										/>
+									</svg>
+								</a>
+							</div>
+							<div class="mb-2 p-3">
+								<button class="btn btn-secondary rounded-4 btn-sm">Playlist</button>
+								<button class="btn btn-secondary rounded-4 btn-sm">Podcast</button>
+								<button class="btn btn-secondary rounded-4 btn-sm">Artisti</button>
+							</div>
+							<!-- cambiare numerino magico calc(100vh - 247px)-->
+							<div class="text-white overflow-y-auto flex-grow-1 mh-100 ps-3 pe-2 text-nowrap" id="playlistContainer">
+								<!-- playlist -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col flex-grow-1 h-100" id="mainContent">
+					<div class="h-90 bg-dark rounded-3 pb-2">
+						<div class="p-3 pt-0 overflow-y-auto h-100">
+							<div class="d-flex justify-content-between sticky-top bg-dark py-3">
+								<div class="d-flex">
+									<button class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-caret-left"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+											/>
+										</svg>
+									</button>
+									<button class="btn btn-secondary rounded-circle d-flex align-items-center p-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-caret-right"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+											/>
+										</svg>
+									</button>
+								</div>
+								<div class="d-flex align-items-center">
+									<button class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2 ms-auto">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-bell"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"
+											/>
+										</svg>
+									</button>
+									<button class="btn btn-secondary rounded-circle d-flex align-items-center me-2 p-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-people"
+											viewBox="0 0 16 16"
+											id="btnAmici"
+										>
+											<path
+												d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
+											/>
+										</svg>
+									</button>
+									<button class="btn btn-secondary rounded-circle d-flex align-items-center p-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-person"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"
+											/>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div id="containerAds" class="mt-3 mb-4">
+								<div class="card mb-3 bg-black">
+									<div class="row g-0">
+										<div class="col-md-3 d-flex flex-column justify-content-center px-2 py-4">
+											<!-- dimensione card da risolvere -->
+											<img src="./assets/imgs/main/image-1.jpg" class="img-fluid rounded-2" alt="..." id="imgAds" />
+										</div>
+										<div class="col-md-9">
+											<div class="card-body text-white">
+												<p class="fw-bolder" id="albumAds"></p>
+												<h2 class="card-title display-2" id="titleAds"></h2>
+												<p class="card-text" id="artistAds"></p>
+												<p class="card-text">Ascolta il nuovo singolo</p>
+												<div>
+													<button
+														class="px-4 py-2 btn btn-success fw-semibold text-black btn-sm rounded-pill fs-7 me-2"
+													>
+														Play
+													</button>
+													<button
+														class="px-4 py-2 btn btn-outline-dark fw-semibold btn-sm rounded-pill text-white border-white fs-7 me-2"
+													>
+														Salva
+													</button>
+													<div class="dropdown d-inline-block">
+														<button
+															class="px-2 py-2 btn btn-black fw-semibold fs-7 text-white-50"
+															type="button"
+															data-bs-toggle="dropdown"
+														>
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																width="20"
+																height="20"
+																fill="currentColor"
+																class="bi bi-three-dots"
+																viewBox="0 0 16 16"
+															>
+																<path
+																	d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+																/>
+															</svg>
+														</button>
+														<ul class="dropdown-menu bg-dark p-2">
+															<li>
+																<a class="dropdown-item text-white rounded-1 mb-1 d-flex align-items-center" href="#"
+																	><svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="16"
+																		height="16"
+																		fill="currentColor"
+																		class="bi bi-plus-circle me-2"
+																		viewBox="0 0 16 16"
+																	>
+																		<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+																		<path
+																			d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+																		/>
+																	</svg>
+																	Aggiungi alla libreria
+																</a>
+															</li>
+															<!-- AGGIUNGERE DROPEND -->
+															<li class="">
+																<a class="dropdown-item text-white rounded-1 mb-1 d-flex align-items-center" href="#"
+																	><svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="16"
+																		height="16"
+																		fill="currentColor"
+																		class="bi bi-box-arrow-up me-2"
+																		viewBox="0 0 16 16"
+																	>
+																		<path
+																			fill-rule="evenodd"
+																			d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"
+																		/>
+																		<path
+																			fill-rule="evenodd"
+																			d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"
+																		/>
+																	</svg>
+																	Condividi</a
+																>
+															</li>
+															<li>
+																<a class="dropdown-item text-white rounded-1 d-flex align-items-center" href="#"
+																	><svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		width="16"
+																		height="16"
+																		fill="currentColor"
+																		class="bi bi-exclamation-octagon me-2"
+																		viewBox="0 0 16 16"
+																	>
+																		<path
+																			d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"
+																		/>
+																		<path
+																			d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+																		/>
+																	</svg>
+																	Segnala
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<span id="badgeAds" class="badge rounded-3 bg-secondary"> Sponsorizzato </span>
+								</div>
+							</div>
+							<!-- contenuto buon qualcosa -->
+							<div id="bodyMain" class="">
+								<h3 id="dynamicGreet" class="text-white mb-3">Buonasera</h3>
+								<div class="row g-2 mb-4" id="rowArtists"></div>
+								<!-- altro di cio che ti piace -->
+								<div id="otherMain" class="mb-3">
+									<h3 class="text-white">Altro di ciò che ti piace</h3>
+									<div class="row row-cols-2 row-cols-lg-5" id="albumsRow"></div>
+								</div>
+								<div id="forYou" class="mb-3">
+									<h3 class="text-white">Creato per te</h3>
+									<div class="row row-cols-2 row-cols-lg-5" id="playlistRow"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-2" id="friends">
+					<div class="bg-dark p-3 rounded-3 h-90 text-white">
+						<div class="d-flex justify-content-between align-items-center mb-2">
+							<h6 class="mb-0">Attivita' amici</h6>
+							<div class="text-white-50">
+								<button class="btn btn-dark p-1 text-white-50 rounded-circle">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="22"
+										height="22"
+										fill="currentColor"
+										class="bi bi-person-plus"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"
+										/>
+										<path
+											fill-rule="evenodd"
+											d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+										/>
+									</svg>
+								</button>
+								<button class="btn btn-dark p-1 text-white-50 rounded-circle">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="22"
+										height="22"
+										fill="currentColor"
+										class="bi bi-x-lg"
+										id="btnCloseFriends"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="d-flex mb-4">
+							<img
+								src="./assets/imgs/main/image-15.jpg"
+								alt=""
+								class="rounded-circle me-2"
+								height="40px"
+								width="40px"
+							/>
+							<div class="d-flex flex-column">
+								<p class="mb-1">Charlie Hookham</p>
+								<p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
+								<p class="fs-7 text-white-50 d-flex align-items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-disc me-1"
+										viewBox="0 0 16 16"
+									>
+										<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+										<path
+											d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+										/>
+									</svg>
+									<span>EP III</span>
+								</p>
+							</div>
+						</div>
+						<div class="d-flex mb-4">
+							<img
+								src="./assets/imgs/main/image-13.jpg"
+								alt=""
+								class="rounded-circle me-2"
+								height="40px"
+								width="40px"
+							/>
+							<div class="d-flex flex-column">
+								<p class="mb-1">lightdark02</p>
+								<p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
+								<p class="fs-7 text-white-50 d-flex align-items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-disc me-1"
+										viewBox="0 0 16 16"
+									>
+										<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+										<path
+											d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+										/>
+									</svg>
+									<span>EP III</span>
+								</p>
+							</div>
+						</div>
+						<div class="d-flex mb-4">
+							<img
+								src="./assets/imgs/main/image-17.jpg"
+								alt=""
+								class="rounded-circle me-2"
+								height="40px"
+								width="40px"
+							/>
+							<div class="d-flex flex-column">
+								<p class="mb-1">Valeria Traverso</p>
+								<p class="fs-7 text-white-50 mb-1">In camera &#183; Yumi Zouna</p>
+								<p class="fs-7 text-white-50 d-flex align-items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-disc me-1"
+										viewBox="0 0 16 16"
+									>
+										<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+										<path
+											d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+										/>
+									</svg>
+									<span>EP III</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="musicPlayer container-fluid fixed-bottom bg-black pt-2 h-10">
+					<div class="row d-flex h-100">
+						<!-- div card sx -->
+						<div class="col bg-black h-100">
+							<div class="d-flex align-items-center h-100">
+								<img src="./assets/imgs/main/image-1.jpg" class="rounded-2 h-90" alt="..." />
 
-                                <div class="ms-3 d-flex flex-column">
-                                    <h5 class="m-0">Song</h5>
+								<div class="ms-3 d-flex flex-column">
+									<h5 class="m-0">Song</h5>
 
-                                    <p class="m-0">Artist</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- div controlli player -->
-                        <div class="col d-flex justify-content-center align-items-center">
-                            <div class="playerContent w-50">
-                                <div class="playerBtns d-flex justify-content-center">
-                                    <button href="#" class="btn btn-dark rounded-circle bg-black border-0 shuffle">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            fill="white"
-                                            class="bi m-2 bi-shuffle"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
-                                            />
-                                            <path
-                                                d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
-                                            />
-                                        </svg>
-                                    </button>
+									<p class="m-0">Artist</p>
+								</div>
+							</div>
+						</div>
+						<!-- div controlli player -->
+						<div class="col d-flex justify-content-center align-items-center">
+							<div class="playerContent w-50">
+								<div class="playerBtns d-flex justify-content-center">
+									<button href="#" class="btn btn-dark rounded-circle bg-black border-0 shuffle">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="22"
+											height="22"
+											fill="white"
+											class="bi m-2 bi-shuffle"
+											viewBox="0 0 16 16"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+											/>
+											<path
+												d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
+											/>
+										</svg>
+									</button>
 
-                                    <button href="#" class="btn btn-dark rounded-circle bg-black border-0 prev">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            fill="white"
-                                            class="bi m-2 bi-caret-left"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button href="#" class="btn btn-dark rounded-circle bg-black border-0 play">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="38"
-                                            height="38"
-                                            fill="black"
-                                            class="bi m-2 bi-play text-bg-light p-2 rounded-circle"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button href="#" class="btn btn-dark rounded-circle bg-black border-0 next">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            fill="white"
-                                            class="bi m-2 bi-caret-right"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button href="#" class="btn btn-dark rounded-circle bg-black border-0 repeat">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            fill="white"
-                                            class="bi m-2 bi-repeat"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- progress bar -->
-                                <div class="progress-container">
-                                    <div class="progress bg-secondary" style="height: 3px">
-                                        <div
-                                            class="progress-bar bg-white"
-                                            role="progressbar"
-                                            aria-label="Progress bar"
-                                            style="width: 25%"
-                                            aria-valuenow="25"
-                                            aria-valuemin="0"
-                                            aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- volume bar -->
-                        <div class="col d-flex justify-content-end align-items-center">
-                            <button class="btn btn-danger bg-black border-0">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="white"
-                                    class="bi bi-volume-up-fill me-3"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"
-                                    />
-                                    <path
-                                        d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89z"
-                                    />
-                                    <path
-                                        d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"
-                                    />
-                                </svg>
-                            </button>
+									<button href="#" class="btn btn-dark rounded-circle bg-black border-0 prev">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="22"
+											height="22"
+											fill="white"
+											class="bi m-2 bi-caret-left"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+											/>
+										</svg>
+									</button>
+									<button href="#" class="btn btn-dark rounded-circle bg-black border-0 play">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="38"
+											height="38"
+											fill="black"
+											class="bi m-2 bi-play text-bg-light p-2 rounded-circle"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+											/>
+										</svg>
+									</button>
+									<button href="#" class="btn btn-dark rounded-circle bg-black border-0 next">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="22"
+											height="22"
+											fill="white"
+											class="bi m-2 bi-caret-right"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+											/>
+										</svg>
+									</button>
+									<button href="#" class="btn btn-dark rounded-circle bg-black border-0 repeat">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="22"
+											height="22"
+											fill="white"
+											class="bi m-2 bi-repeat"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+											/>
+										</svg>
+									</button>
+								</div>
+								<!-- progress bar -->
+								<div class="progress-container">
+									<div class="progress bg-secondary" style="height: 3px">
+										<div
+											class="progress-bar bg-white"
+											role="progressbar"
+											aria-label="Progress bar"
+											style="width: 25%"
+											aria-valuenow="25"
+											aria-valuemin="0"
+											aria-valuemax="100"
+										></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- volume bar -->
+						<div class="col d-flex justify-content-end align-items-center">
+							<button class="btn btn-danger bg-black border-0">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="white"
+									class="bi bi-volume-up-fill me-3"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"
+									/>
+									<path
+										d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89z"
+									/>
+									<path
+										d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"
+									/>
+								</svg>
+							</button>
 
-                            <div class="volume-bar ml-auto">
-                                <div class="progress bg-secondary" style="height: 3px; width: 80px">
-                                    <div
-                                        class="progress-bar bg-white"
-                                        role="progressbar"
-                                        aria-label="Progress bar"
-                                        style="width: 40%"
-                                        aria-valuenow="25"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+							<div class="volume-bar ml-auto">
+								<div class="progress bg-secondary" style="height: 3px; width: 80px">
+									<div
+										class="progress-bar bg-white"
+										role="progressbar"
+										aria-label="Progress bar"
+										style="width: 40%"
+										aria-valuenow="25"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-            crossorigin="anonymous"
-        ></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+			integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+			crossorigin="anonymous"
+		></script>
 
-        <!-- sostituire con js -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <!-- script amici -->
-        <script src="./assets/scripts/token.js"></script>
-        <script src="./assets/scripts/columns.js"></script>
-        <script src="./assets/scripts/home.js"></script>
-        <script src="./assets/scripts/search.js"></script>
-    </body>
+		<!-- sostituire con js -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<!-- script amici -->
+		<script src="./assets/scripts/token.js"></script>
+		<script src="./assets/scripts/columns.js"></script>
+		<script src="./assets/scripts/home.js"></script>
+	</body>
 </html>
