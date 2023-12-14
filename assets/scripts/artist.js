@@ -5,104 +5,104 @@ const artistId = params.get("artistId");
 console.log(artistId);
 
 window.addEventListener("DOMContentLoaded", () => {
-    fetch(urlArtist + artistId, {
-        headers: {
-            "X-RapidAPI-Key": token,
-            "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-        },
-    })
-        .then((resp) => {
-            if (!resp.ok) {
-                statusErrors(resp);
-            }
-            return resp.json();
-        })
-        .then((myObj) => {
-            console.log(myObj);
-            generateArtistPage(myObj);
-        })
-        .catch((err) => {
-            console.log("error", err);
-        });
+	fetch(urlArtist + artistId, {
+		headers: {
+			"X-RapidAPI-Key": token,
+			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+		},
+	})
+		.then((resp) => {
+			if (!resp.ok) {
+				statusErrors(resp);
+			}
+			return resp.json();
+		})
+		.then((myObj) => {
+			console.log(myObj);
+			generateArtistPage(myObj);
+		})
+		.catch((err) => {
+			console.log("error", err);
+		});
 });
 
 function generateArtistPage(myObj) {
-    const imgArtistDiv = document.getElementById("imgArtist");
-    imgArtistDiv.style.backgroundImage = `url('${myObj.picture_xl}')`;
-    const artistName = document.getElementById("artistName");
-    artistName.innerText = myObj.name;
-    const monthlyFans = document.getElementById("monthlyFans");
-    monthlyFans.innerText = myObj.nb_fan + " ascoltatori mensili";
-    const artistLikedImg = document.getElementById("artistLikedImg");
-    artistLikedImg.src = myObj.picture_medium;
-    const artistLikedName = document.getElementById("artistLikedName");
-    artistLikedName.innerText = "di " + myObj.name;
+	const imgArtistDiv = document.getElementById("imgArtist");
+	imgArtistDiv.style.backgroundImage = `url('${myObj.picture_xl}')`;
+	const artistName = document.getElementById("artistName");
+	artistName.innerText = myObj.name;
+	const monthlyFans = document.getElementById("monthlyFans");
+	monthlyFans.innerText = myObj.nb_fan + " ascoltatori mensili";
+	const artistLikedImg = document.getElementById("artistLikedImg");
+	artistLikedImg.src = myObj.picture_medium;
+	const artistLikedName = document.getElementById("artistLikedName");
+	artistLikedName.innerText = "di " + myObj.name;
 
-    const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + myObj.name;
-    /* fetch 2 */
-    fetch(urlSearch, {
-        headers: {
-            "X-RapidAPI-Key": token,
-            "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-        },
-    })
-        .then((resp) => {
-            if (!resp.ok) {
-                statusErrors(resp);
-            }
-            return resp.json();
-        })
-        .then((myObj) => {
-            for (let i = 0; i < 5; i++) {
-                console.log(myObj);
-                console.log(urlSearch);
-                generateArtistSongs(myObj.data[i]);
-            }
-        })
-        .catch((err) => {
-            console.log("error", err);
-        });
+	const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + myObj.name;
+	/* fetch 2 */
+	fetch(urlSearch, {
+		headers: {
+			"X-RapidAPI-Key": token,
+			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+		},
+	})
+		.then((resp) => {
+			if (!resp.ok) {
+				statusErrors(resp);
+			}
+			return resp.json();
+		})
+		.then((myObj) => {
+			for (let i = 0; i < 5; i++) {
+				console.log(myObj);
+				console.log(urlSearch);
+				generateArtistSongs(myObj.data[i]);
+			}
+		})
+		.catch((err) => {
+			console.log("error", err);
+		});
 }
 
 function generateArtistSongs(myObj) {
-    const artistSong = document.getElementById("artistSong");
+	const artistSong = document.getElementById("artistSong");
 
-    const singleSong = document.createElement("li");
-    singleSong.className =
-        "d-flex align-items-center justify-content-between rounded-2 list-group-item bg-transparent border-0 text-white";
-    const songImg = document.createElement("img");
-    songImg.src = myObj.album.cover_small;
-    songImg.className = "rounded-3 ms-4";
-    const songInfo = document.createElement("div");
-    songInfo.classList = "text-white ms-3 w-50 me-auto";
-    const songName = document.createElement("p");
-    songName.classList = "m-0";
-    songName.innerText = myObj.title;
-    songInfo.appendChild(songName);
-    if (myObj.explicit_lyrics == true) {
-        const songE = document.createElement("p");
-        songE.classList = "m-0";
-        songE.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-explicit-fill" viewBox="0 0 16 16">
+	const singleSong = document.createElement("li");
+	singleSong.className =
+		"d-flex align-items-center justify-content-between rounded-2 list-group-item bg-transparent border-0 text-white";
+	const songImg = document.createElement("img");
+	songImg.src = myObj.album.cover_small;
+	songImg.className = "rounded-3 ms-4";
+	const songInfo = document.createElement("div");
+	songInfo.classList = "text-white ms-3 w-50 me-auto";
+	const songName = document.createElement("p");
+	songName.classList = "m-0";
+	songName.innerText = myObj.title;
+	songInfo.appendChild(songName);
+	if (myObj.explicit_lyrics == true) {
+		const songE = document.createElement("p");
+		songE.classList = "m-0";
+		songE.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-explicit-fill" viewBox="0 0 16 16">
 	<path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zm4.326 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z"/>
   </svg>`;
-        songInfo.appendChild(songE);
-    }
-    artistSong.appendChild(singleSong);
-    singleSong.appendChild(songImg);
-    singleSong.appendChild(songInfo);
+		songInfo.appendChild(songE);
+	}
+	artistSong.appendChild(singleSong);
+	singleSong.appendChild(songImg);
+	singleSong.appendChild(songInfo);
 
-    const nStream = document.createElement("div");
-    nStream.className = "d-flex justify-content-end me-5 w-25";
-    nStream.innerHTML = `<p class="m-0">${myObj.rank}</p>`;
-    singleSong.appendChild(nStream);
+	const nStream = document.createElement("div");
+	nStream.className = "d-flex justify-content-end me-5 w-25";
+	nStream.innerHTML = `<p class="m-0">${myObj.rank}</p>`;
+	singleSong.appendChild(nStream);
 
-    const divDuration = document.createElement("div");
-    let minutes = Math.floor(myObj.duration / 60);
-    let seconds = myObj.duration % 60;
-    let formattedDuration = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-    console.log(formattedDuration);
-    divDuration.className = "d-flex justify-content-end";
-    divDuration.innerHTML = `<p class="m-0"><svg
+	const divDuration = document.createElement("div");
+	let minutes = Math.floor(myObj.duration / 60);
+	let seconds = myObj.duration % 60;
+	let formattedDuration = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+	console.log(formattedDuration);
+	divDuration.className = "d-flex justify-content-end";
+	divDuration.innerHTML = `<p class="m-0"><svg
 	xmlns="http://www.w3.org/2000/svg"
 	width="22"
 	height="22"
@@ -127,20 +127,20 @@ function generateArtistSongs(myObj) {
 		d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
 	/>
 	</svg></p>`;
-    singleSong.appendChild(divDuration);
+	singleSong.appendChild(divDuration);
 
-    singleSong.addEventListener("mouseover", function () {
-        singleSong.classList.remove("bg-transparent");
-        singleSong.classList.add("bg-secondary");
-        this.querySelectorAll("svg").forEach((el) => {
-            el.classList.add("opacity-100");
-        });
-    });
-    singleSong.addEventListener("mouseout", function () {
-        singleSong.classList.remove("bg-secondary");
-        singleSong.classList.add("bg-transparent");
-        this.querySelectorAll("svg").forEach((el) => {
-            el.classList.remove("opacity-100");
-        });
-    });
+	singleSong.addEventListener("mouseover", function () {
+		singleSong.classList.remove("bg-transparent");
+		singleSong.classList.add("bg-secondary");
+		this.querySelectorAll("svg").forEach((el) => {
+			el.classList.add("opacity-100");
+		});
+	});
+	singleSong.addEventListener("mouseout", function () {
+		singleSong.classList.remove("bg-secondary");
+		singleSong.classList.add("bg-transparent");
+		this.querySelectorAll("svg").forEach((el) => {
+			el.classList.remove("opacity-100");
+		});
+	});
 }

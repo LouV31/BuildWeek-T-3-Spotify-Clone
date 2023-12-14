@@ -10827,6 +10827,12 @@ textarea.form-control-lg {
   transition: all 0.3s;
 }
 
+#albumSongs li::before {
+  width: 20px;
+  padding-inline: 5px;
+  vertical-align: center;
+}
+
 /* scrollbar main quadratino bianco */
 ::-webkit-scrollbar {
   width: 10px;
