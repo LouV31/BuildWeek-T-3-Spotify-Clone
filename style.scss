@@ -55,12 +55,6 @@
 	right: 0;
 	transition: all 0.3s;
 }
-#albumSongs li::before {
-	width: 20px;
-	padding-inline-end: 10px;
-	vertical-align: center;
-	list-style-position: inside;
-}
 /* scrollbar main quadratino bianco */
 ::-webkit-scrollbar {
 	width: 10px;
