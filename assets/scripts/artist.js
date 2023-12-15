@@ -92,11 +92,15 @@ function generateArtistSongs(myObj) {
 	singleSong.appendChild(songInfo);
 
 	const nStream = document.createElement("div");
-	nStream.className = "d-flex justify-content-end me-5 w-25";
+	nStream.className = "d-none d-md-flex justify-content-end me-5 w-25";
 	nStream.innerHTML = `<p class="m-0">${myObj.rank}</p>`;
 	singleSong.appendChild(nStream);
 
 	const divDuration = document.createElement("div");
+	let minutes = Math.floor(myObj.duration / 60);
+	let seconds = myObj.duration % 60;
+	let formattedDuration = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+	console.log(formattedDuration);
 	divDuration.className = "d-flex justify-content-end";
 	divDuration.innerHTML = `<p class="m-0"><svg
 	xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +114,7 @@ function generateArtistSongs(myObj) {
 		d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
 	/>
 	</svg></p>
-	<p class="m-0 mx-3">2:21</p>
+	<p class="m-0 mx-3">${formattedDuration}</p>
 	<p class="m-0"><svg
 	xmlns="http://www.w3.org/2000/svg"
 	width="16"
@@ -137,6 +141,61 @@ function generateArtistSongs(myObj) {
 		singleSong.classList.add("bg-transparent");
 		this.querySelectorAll("svg").forEach((el) => {
 			el.classList.remove("opacity-100");
+		});
+	});
+	/* music player function */
+	singleSong.addEventListener("click", function (e) {
+		/* immagine */
+		const playerImg = document.querySelector(".musicPlayer img");
+		const smallPlayerImg = document.getElementById("smallPlayerImg");
+		const songImage = singleSong.querySelector("img");
+		playerImg.src = songImage.src;
+		smallPlayerImg.src = songImage.src;
+
+		/* titolo */
+		const titolPlayer = document.querySelector(".musicPlayer h5");
+		const smallPlayerTitle = document.getElementById("smallPlayerTitle");
+		smallPlayerTitle.innerText = myObj.title;
+		titolPlayer.innerText = myObj.title;
+		const artistPlayer = document.querySelector(".musicPlayer p");
+		const smallPlayerName = document.getElementById("smallPlayerName");
+		artistPlayer.innerText = myObj.artist.name;
+		smallPlayerName.innerText = myObj.artist.name;
+
+		/* link preview */
+		let songFile = myObj.preview;
+		const audioTag = document.querySelector("audio");
+		audioTag.pause();
+		audioTag.src = songFile;
+		const playButton = document.querySelector(".play");
+		const smallPlayerPlay = document.getElementById("smallPlayerPlay");
+
+		smallPlayerPlay.addEventListener("click", function () {
+			if (audioTag.paused) {
+				audioTag.play();
+			} else {
+				audioTag.pause();
+			}
+		});
+
+		let playIcon = playButton.innerHTML;
+		playButton.addEventListener("click", function () {
+			if (audioTag.paused) {
+				playIcon = playButton.innerHTML;
+				playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+			<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+			<path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
+		  </svg>`;
+				audioTag.play();
+			} else {
+				playButton.innerHTML = playIcon;
+				audioTag.pause();
+			}
+		});
+		/* audio */
+		var volumeControl = document.getElementById("volumeControl");
+		volumeControl.addEventListener("input", function () {
+			audioTag.volume = this.value / 100;
 		});
 	});
 }

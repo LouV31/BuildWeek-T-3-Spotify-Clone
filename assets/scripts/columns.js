@@ -1,7 +1,7 @@
 const btnAmici = document.getElementById("btnAmici");
 const friends = document.getElementById("friends");
 const closeFriends = function () {
-	friends.classList.toggle("d-none");
+	friends.classList.toggle("d-lg-block");
 };
 const btnCloseFriends = document.getElementById("btnCloseFriends");
 btnCloseFriends.addEventListener("click", closeFriends);
