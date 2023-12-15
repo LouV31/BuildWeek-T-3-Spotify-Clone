@@ -52,6 +52,7 @@ function generateAlbumPage(myObj) {
 }
 
 function generateAlbumSongs(myObj) {
+<!--playlistFatta-->
     const olAlbumSongs = document.getElementById("albumSongs");
     let i = 1;
     myObj.tracks.data.forEach((track) => {
@@ -82,6 +83,7 @@ function generateAlbumSongs(myObj) {
         const heartSvg = document.createElement("p");
         heartSvg.className = "fs-4 m-0 me-4 d-flex align-items-center";
         heartSvg.innerHTML = `<svg
+
 		xmlns="http://www.w3.org/2000/svg"
 		width="22"
 		height="22"

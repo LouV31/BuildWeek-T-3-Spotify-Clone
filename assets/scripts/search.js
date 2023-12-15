@@ -37,7 +37,7 @@ function fetchSearch(searchValue) {
 function popolaSearch(obj) {
 	obj.data.forEach((element) => {
 		const colAlbum = document.createElement("div");
-		colAlbum.className = "col-4";
+		colAlbum.className = "col-6 col-md-4";
 		const cardContainer = document.createElement("div");
 		cardContainer.className = "card border-0 bg-dark p-3 rounded-3";
 		const containerImage = document.createElement("div");
