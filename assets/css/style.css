@@ -10798,6 +10798,7 @@ textarea.form-control-lg {
 
 .ellipsis {
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .h-90 {
@@ -10838,6 +10839,17 @@ textarea.form-control-lg {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+#prova {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  bottom: 10%;
+  background-color: pink;
+  opacity: 40%;
+  padding-inline: 50px;
+  z-index: 1000;
 }
 
 /* ::-webkit-scrollbar-corner {
