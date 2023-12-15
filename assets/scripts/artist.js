@@ -92,7 +92,7 @@ function generateArtistSongs(myObj) {
 	singleSong.appendChild(songInfo);
 
 	const nStream = document.createElement("div");
-	nStream.className = "d-flex justify-content-end me-5 w-25";
+	nStream.className = "d-none d-md-flex justify-content-end me-5 w-25";
 	nStream.innerHTML = `<p class="m-0">${myObj.rank}</p>`;
 	singleSong.appendChild(nStream);
 

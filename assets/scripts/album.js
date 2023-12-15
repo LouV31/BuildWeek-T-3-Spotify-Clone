@@ -71,7 +71,7 @@ function generateAlbumSongs(myObj) {
 		titleSongDiv.appendChild(songTitle);
 		liSong.appendChild(titleSongDiv);
 		const divPlays = document.createElement("div");
-		divPlays.className = "w-25 pe-5";
+		divPlays.className = "d-none d-md-block w-25 pe-5";
 		const plays = document.createElement("p");
 		plays.className = "m-0 text-end me-5";
 		plays.innerText = track.rank;
