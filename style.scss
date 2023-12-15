@@ -68,13 +68,19 @@
 }
 
 #prova {
+	height: 8%;
+	width: 100%;
+	position: fixed;
+	bottom: 11%;
+	z-index: 1000;
+}
+#prova2 {
 	height: 10%;
 	width: 100%;
 	position: fixed;
-	bottom: 10%;
-	background-color: pink;
+	bottom: 0;
+	background-color: black;
 	opacity: 40%;
-	padding-inline: 50px;
 	z-index: 1000;
 }
 /* ::-webkit-scrollbar-corner {
