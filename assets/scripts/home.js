@@ -1,11 +1,11 @@
 const urlArtist = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
 const urlAlbum = "https://deezerdevs-deezer.p.rapidapi.com/album/";
-const urlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/track/";
+const urlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 
 const artistArr = [13, 45, 29, 19, 39, 84];
 const albumsArr = [103248, 12813058, 14101380, 531851, 74479];
 const playlistArr = [
-    2164602917, 540102262, 1373094952, 957102432, 1856982877, 129977374, 1631587782, 18182035, 56062241, 1178120272,
+    160504851, 49119317, 6313525084, 31693005, 5317014122, 12146394, 4525618, 3005155, 114461181, 133196991,
 ];
 
 const idAdsArr = [89748835, 565278172, 23457141];
@@ -166,7 +166,7 @@ function generatePlaylist(obj) {
     const containerImage = document.createElement("div");
     containerImage.className = "position-relative";
     const albumImg = document.createElement("img");
-    albumImg.src = obj.album.cover_medium;
+    albumImg.src = obj.picture_small;
     albumImg.className = "card-img-top rounded-1 mb-3";
     const buttonDiv = document.createElement("div");
     buttonDiv.className = "play-button";
@@ -190,7 +190,7 @@ function generatePlaylist(obj) {
     albumTitle.innerText = obj.title;
     const albumDesc = document.createElement("p");
     albumDesc.className = "card-text text-white-50";
-    albumDesc.innerText = obj.artist.name;
+    albumDesc.innerText = obj.creator.name;
 
     containerImage.appendChild(albumImg);
     buttonDiv.appendChild(playButton);
@@ -208,7 +208,7 @@ function generatePlaylist(obj) {
     colAlbum.addEventListener("mouseout", function () {
         buttonDiv.classList.remove("opacity-100");
     });
-    colAlbum.addEventListener("click", function () {
+    cardContainer.addEventListener("click", function () {
         window.location.assign("./playlist.html?playlistId=" + obj.id);
     });
 }
