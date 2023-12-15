@@ -144,5 +144,61 @@ function generateAlbumSongs(myObj) {
 			liSong.classList.add("bg-transparent");
 			liSong.classList.remove("bg-secondary");
 		});
+
+		/* music player function */
+		liSong.addEventListener("click", function (e) {
+			/* immagine */
+			const playerImg = document.querySelector(".musicPlayer img");
+			const smallPlayerImg = document.getElementById("smallPlayerImg");
+			const songImage = document.getElementById("albumCover");
+			playerImg.src = songImage.src;
+			smallPlayerImg.src = songImage.src;
+
+			/* titolo */
+			const titolPlayer = document.querySelector(".musicPlayer h5");
+			const smallPlayerTitle = document.getElementById("smallPlayerTitle");
+			smallPlayerTitle.innerText = track.title;
+			titolPlayer.innerText = track.title;
+			const artistPlayer = document.querySelector(".musicPlayer p");
+			const smallPlayerName = document.getElementById("smallPlayerName");
+			artistPlayer.innerText = track.artist.name;
+			smallPlayerName.innerText = track.artist.name;
+
+			/* link preview */
+			let songFile = track.preview;
+			const audioTag = document.querySelector("audio");
+			audioTag.pause();
+			audioTag.src = songFile;
+			const playButton = document.querySelector(".play");
+			const smallPlayerPlay = document.getElementById("smallPlayerPlay");
+
+			smallPlayerPlay.addEventListener("click", function () {
+				if (audioTag.paused) {
+					audioTag.play();
+				} else {
+					audioTag.pause();
+				}
+			});
+
+			let playIcon = playButton.innerHTML;
+			playButton.addEventListener("click", function () {
+				if (audioTag.paused) {
+					playIcon = playButton.innerHTML;
+					playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+			<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+			<path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
+		  </svg>`;
+					audioTag.play();
+				} else {
+					playButton.innerHTML = playIcon;
+					audioTag.pause();
+				}
+			});
+			/* audio */
+			var volumeControl = document.getElementById("volumeControl");
+			volumeControl.addEventListener("input", function () {
+				audioTag.volume = this.value / 100;
+			});
+		});
 	});
 }
