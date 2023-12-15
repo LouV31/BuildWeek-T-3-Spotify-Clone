@@ -159,6 +159,7 @@ function generateArtistSongs(myObj) {
 		/* link preview */
 		let songFile = myObj.preview;
 		const audioTag = document.querySelector("audio");
+		audioTag.pause();
 		audioTag.src = songFile;
 		const playButton = document.querySelector(".play");
 
