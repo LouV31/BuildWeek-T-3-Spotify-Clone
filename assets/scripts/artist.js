@@ -147,14 +147,20 @@ function generateArtistSongs(myObj) {
 	singleSong.addEventListener("click", function (e) {
 		/* immagine */
 		const playerImg = document.querySelector(".musicPlayer img");
+		const smallPlayerImg = document.getElementById("smallPlayerImg");
 		const songImage = singleSong.querySelector("img");
 		playerImg.src = songImage.src;
+		smallPlayerImg.src = songImage.src;
 
 		/* titolo */
 		const titolPlayer = document.querySelector(".musicPlayer h5");
+		const smallPlayerTitle = document.getElementById("smallPlayerTitle");
+		smallPlayerTitle.innerText = myObj.title;
 		titolPlayer.innerText = myObj.title;
 		const artistPlayer = document.querySelector(".musicPlayer p");
+		const smallPlayerName = document.getElementById("smallPlayerName");
 		artistPlayer.innerText = myObj.artist.name;
+		smallPlayerName.innerText = myObj.artist.name;
 
 		/* link preview */
 		let songFile = myObj.preview;
@@ -162,6 +168,15 @@ function generateArtistSongs(myObj) {
 		audioTag.pause();
 		audioTag.src = songFile;
 		const playButton = document.querySelector(".play");
+		const smallPlayerPlay = document.getElementById("smallPlayerPlay");
+
+		smallPlayerPlay.addEventListener("click", function () {
+			if (audioTag.paused) {
+				audioTag.play();
+			} else {
+				audioTag.pause();
+			}
+		});
 
 		let playIcon = playButton.innerHTML;
 		playButton.addEventListener("click", function () {
