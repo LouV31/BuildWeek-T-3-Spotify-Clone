@@ -10,7 +10,9 @@ $success: #1ed760;
 $secondary: #323232;
 
 $dropdown-link-hover-bg: #4d4d4d;
-
+$form-range-track-bg: $secondary;
+$form-range-thumb-active-bg: white;
+$form-range-thumb-bg: white;
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "./assets/bootstrap/scss/variables";
 
