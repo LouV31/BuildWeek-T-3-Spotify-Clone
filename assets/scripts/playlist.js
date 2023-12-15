@@ -1,8 +1,8 @@
-const urlAlbum = "https://deezerdevs-deezer.p.rapidapi.com/album/";
+const urlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 const urlSearch = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 const params = new URLSearchParams(window.location.search);
-const albumId = params.get("albumId");
-console.log(albumId);
+const playlistId = params.get("playlistId");
+console.log(playlistId);
 
 const colorArray = ["palegreen", "palegoldenrod", "paleturquoise", "lightgrey"];
 shuffleArray(colorArray);
@@ -10,7 +10,7 @@ const bgColor = colorArray[0];
 console.log(bgColor);
 
 window.addEventListener("DOMContentLoaded", () => {
-    fetch(urlAlbum + albumId, {
+    fetch(urlPlaylist + playlistId, {
         headers: {
             "X-RapidAPI-Key": token,
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .then((myObj) => {
             console.log(myObj);
-            generateAlbumPage(myObj);
+            generatePlaylistPage(myObj);
             generateAlbumSongs(myObj);
         })
         .catch((err) => {
@@ -32,27 +32,26 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 });
 
-function generateAlbumPage(myObj) {
+function generatePlaylistPage(myObj) {
     const albumCover = document.getElementById("albumCover");
-    albumCover.src = myObj.cover_medium;
+    albumCover.src = myObj.picture_medium;
     const nameAlbum = document.getElementById("nameAlbum");
     nameAlbum.innerText = myObj.title;
     const albumArtistImg = document.getElementById("albumArtistImg");
-    albumArtistImg.src = myObj.artist.picture_small;
+    albumArtistImg.src =
+        "https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png";
     const albumArtistName = document.getElementById("albumArtistName");
-    albumArtistName.innerHTML = myObj.artist.name;
-    albumArtistName.href = "./artist.html?artistId=" + myObj.artist.id;
+    albumArtistName.innerHTML = myObj.creator.name;
     const albumInfo = document.getElementById("albumInfo");
-    albumInfo.innerHTML = `${myObj.release_date.split("-")[0]}  &#183;  ${myObj.nb_tracks} brani &#183; ${Math.round(
-        myObj.duration / 60
-    )} min`;
+    albumInfo.innerHTML = `${myObj.creation_date.split(" ")[0]}  &#183;  ${
+        myObj.tracks.data.length
+    } brani &#183; ${Math.round(myObj.duration / 60)} min`;
     const bgAlbum = document.getElementById("imgArtist");
     bgAlbum.style.backgroundColor = bgColor;
     bgAlbum.style.boxShadow = "10px 0 200px " + bgColor;
 }
 
 function generateAlbumSongs(myObj) {
-<!--playlistFatta-->
     const olAlbumSongs = document.getElementById("albumSongs");
     let i = 1;
     myObj.tracks.data.forEach((track) => {
@@ -83,7 +82,6 @@ function generateAlbumSongs(myObj) {
         const heartSvg = document.createElement("p");
         heartSvg.className = "fs-4 m-0 me-4 d-flex align-items-center";
         heartSvg.innerHTML = `<svg
-
 		xmlns="http://www.w3.org/2000/svg"
 		width="22"
 		height="22"
